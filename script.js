@@ -108,4 +108,32 @@
       statNumbers.forEach(animateCount);
     }
   }
+
+  /* ---------- Scroll reveal (about, programs, gallery, CTA) ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+
+  if (revealEls.length) {
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      // No motion preference (or no observer support): show everything immediately.
+      revealEls.forEach(function (el) {
+        el.classList.add('in-view');
+      });
+    } else {
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      revealEls.forEach(function (el) {
+        revealObserver.observe(el);
+      });
+    }
+  }
 })();

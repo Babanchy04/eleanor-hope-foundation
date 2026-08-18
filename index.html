@@ -72,35 +72,45 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 480 420" width="100%" height="100%" preserveAspectRatio="xMidYMax meet">
-          <defs>
-            <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#5EEAD4"/>
-              <stop offset="1" stop-color="#0D9488"/>
-            </linearGradient>
-            <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#0F172A" stop-opacity="0"/>
-              <stop offset="1" stop-color="#0F172A" stop-opacity="0.05"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="480" height="420" fill="url(#skyFade)"/>
-          <circle cx="240" cy="10" r="3" fill="#0D9488" opacity="0.5"/>
-          <circle cx="90" cy="60" r="2" fill="#0D9488" opacity="0.4"/>
-          <circle cx="400" cy="90" r="2.5" fill="#0D9488" opacity="0.35"/>
-          <circle cx="340" cy="30" r="2" fill="#0D9488" opacity="0.3"/>
-          <circle cx="150" cy="20" r="2" fill="#0D9488" opacity="0.35"/>
-          <path d="M40 300a200 200 0 0 1 400 0" fill="none" stroke="#0D9488" stroke-opacity="0.15" stroke-width="1.5"/>
-          <path d="M75 300a165 165 0 0 1 330 0" fill="none" stroke="#0D9488" stroke-opacity="0.25" stroke-width="1.5"/>
-          <path d="M110 300a130 130 0 0 1 260 0" fill="none" stroke="#0D9488" stroke-opacity="0.35" stroke-width="1.5"/>
-          <circle cx="240" cy="300" r="95" fill="url(#sunGrad)"/>
-          <rect x="0" y="300" width="480" height="120" fill="#F8FAFC"/>
-          <path d="M0 300 Q 120 275 240 300 T 480 300" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <div class="hero-visual">
+        <div class="hero-visual-decoration" aria-hidden="true">
+          <svg viewBox="0 0 480 420" width="100%" height="100%" preserveAspectRatio="xMidYMax meet">
+            <defs>
+              <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#5EEAD4"/>
+                <stop offset="1" stop-color="#0D9488"/>
+              </linearGradient>
+              <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0F172A" stop-opacity="0"/>
+                <stop offset="1" stop-color="#0F172A" stop-opacity="0.05"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="480" height="420" fill="url(#skyFade)"/>
+            <circle cx="240" cy="10" r="3" fill="#0D9488" opacity="0.5"/>
+            <circle cx="90" cy="60" r="2" fill="#0D9488" opacity="0.4"/>
+            <circle cx="400" cy="90" r="2.5" fill="#0D9488" opacity="0.35"/>
+            <circle cx="340" cy="30" r="2" fill="#0D9488" opacity="0.3"/>
+            <circle cx="150" cy="20" r="2" fill="#0D9488" opacity="0.35"/>
+            <path d="M40 300a200 200 0 0 1 400 0" fill="none" stroke="#0D9488" stroke-opacity="0.15" stroke-width="1.5"/>
+            <path d="M75 300a165 165 0 0 1 330 0" fill="none" stroke="#0D9488" stroke-opacity="0.25" stroke-width="1.5"/>
+            <path d="M110 300a130 130 0 0 1 260 0" fill="none" stroke="#0D9488" stroke-opacity="0.35" stroke-width="1.5"/>
+            <circle cx="240" cy="300" r="95" fill="url(#sunGrad)"/>
+          </svg>
+        </div>
 
-        <div class="hero-float-card">
-          <span class="hero-float-number">10,000+</span>
-          <span class="hero-float-label">Lives impacted this year</span>
+        <div class="hero-photo-frame">
+          <img
+            src="images/hero-impact.jpg"
+            alt="A volunteer smiles while handing a bag of supplies to a young child during a community outreach event."
+            class="hero-photo"
+            width="1600" height="1066"
+            loading="eager" fetchpriority="high">
+
+          <div class="hero-float-card">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span class="hero-float-number stat-number" data-count="10000" data-suffix="+">0</span>
+            <span class="hero-float-label">Lives impacted this year</span>
+          </div>
         </div>
       </div>
 
@@ -133,7 +143,7 @@
   <section class="about-overview section">
     <div class="container about-grid">
 
-      <div class="about-text">
+      <div class="about-text reveal">
         <p class="eyebrow">Who We Are</p>
         <h2>Dignity begins with access.</h2>
         <p>Eleanor Hope Foundation was founded on a simple belief: lasting change happens when communities have the tools to lead their own progress. For over a decade, we've worked shoulder‑to‑shoulder with local leaders, clinics, and schools to close the gaps that hold families back.</p>
@@ -141,7 +151,7 @@
         <a href="about.html" class="link-arrow">Learn more about our story</a>
       </div>
 
-      <div class="mission-card">
+      <div class="mission-card reveal">
         <h3>Our Mission &amp; Core Values</h3>
         <p class="mission-statement">To equip vulnerable communities with the healthcare, education, and infrastructure they need to thrive — on their own terms.</p>
         <ul class="values-list">
@@ -183,7 +193,7 @@
   <section class="programs section" id="programs">
     <div class="container">
 
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="eyebrow">Where We Work</p>
         <h2>Featured Programs</h2>
         <p class="section-sub">Three pillars guide everything we build alongside the communities we serve.</p>
@@ -191,7 +201,7 @@
 
       <div class="programs-grid">
 
-        <article class="program-card">
+        <article class="program-card reveal">
           <div class="program-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48" width="28" height="28">
               <path d="M24 40C13 32 5 25 5 16.5 5 10.6 9.6 6 15.4 6c3.4 0 6.5 1.7 8.6 4.4C26.1 7.7 29.2 6 32.6 6 38.4 6 43 10.6 43 16.5 43 25 35 32 24 40Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
@@ -203,7 +213,7 @@
           <a href="programs.html" class="link-arrow">Explore program</a>
         </article>
 
-        <article class="program-card">
+        <article class="program-card reveal">
           <div class="program-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48" width="28" height="28">
               <path d="M6 14 24 7l18 7-18 7Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
@@ -216,7 +226,7 @@
           <a href="programs.html" class="link-arrow">Explore program</a>
         </article>
 
-        <article class="program-card">
+        <article class="program-card reveal">
           <div class="program-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48" width="28" height="28">
               <path d="M6 42V22l18-13 18 13v20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
@@ -233,6 +243,44 @@
     </div>
   </section>
 
+  <!-- ============ IMPACT GALLERY ============ -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">Impact in Action</p>
+        <h2>Moments From the Field</h2>
+        <p class="section-sub">A glimpse at the outreach events, volunteer teams, and communities behind the numbers above.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="gallery-card reveal">
+          <div class="gallery-media">
+            <img
+              src="images/community-outreach.jpg"
+              alt="A group of children hold stuffed animal toys and gift bags after a community aid distribution event."
+              loading="lazy" width="1400" height="933">
+            <span class="gallery-badge">Community Outreach</span>
+          </div>
+          <figcaption>Toy and essentials distribution reaching thousands of children each year.</figcaption>
+        </figure>
+
+        <figure class="gallery-card reveal">
+          <div class="gallery-media">
+            <img
+              src="images/volunteer-banner.jpg"
+              alt="Illustration of raised hands in many colors beneath the word Volunteer, encouraging community members to get involved."
+              loading="lazy" width="1400" height="1050">
+            <span class="gallery-badge">Volunteer Network</span>
+          </div>
+          <figcaption>Local volunteers coordinate outreach events and donation drives year‑round.</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA BANNER ============ -->
   <section class="cta-banner">
     <div class="cta-decoration" aria-hidden="true">
@@ -242,7 +290,7 @@
         <path d="M160 260a165 165 0 0 1 330 0" fill="none" stroke="#5EEAD4" stroke-opacity="0.3" stroke-width="1.5"/>
       </svg>
     </div>
-    <div class="container cta-inner">
+    <div class="container cta-inner reveal">
       <h2>Your gift meets someone at dawn.</h2>
       <p>A monthly gift funds the quiet, unglamorous work that changes everything: the clinic visit, the school fee, the well that finally runs clean.</p>
       <div class="cta-actions">
