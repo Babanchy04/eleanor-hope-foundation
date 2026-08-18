@@ -250,31 +250,64 @@
       <div class="section-heading reveal">
         <p class="eyebrow">Impact in Action</p>
         <h2>Moments From the Field</h2>
-        <p class="section-sub">A glimpse at the outreach events, volunteer teams, and communities behind the numbers above.</p>
+        <p class="section-sub">A glimpse at the outreach events, volunteer teams, and communities behind the numbers above. Tap any photo to see it full size.</p>
       </div>
 
       <div class="gallery-grid">
 
         <figure class="gallery-card reveal">
-          <div class="gallery-media">
+          <div class="gallery-media" tabindex="0" role="button" aria-label="View enlarged photo: Field relief and supplies distribution">
             <img
               src="images/community-outreach.jpg"
               alt="A group of children hold stuffed animal toys and gift bags after a community aid distribution event."
               loading="lazy" width="1400" height="933">
-            <span class="gallery-badge">Community Outreach</span>
+            <span class="gallery-badge">Field Relief</span>
           </div>
           <figcaption>Toy and essentials distribution reaching thousands of children each year.</figcaption>
         </figure>
 
         <figure class="gallery-card reveal">
-          <div class="gallery-media">
+          <div class="gallery-media" tabindex="0" role="button" aria-label="View enlarged photo: Volunteer network">
             <img
               src="images/volunteer-banner.jpg"
               alt="Illustration of raised hands in many colors beneath the word Volunteer, encouraging community members to get involved."
               loading="lazy" width="1400" height="1050">
-            <span class="gallery-badge">Volunteer Network</span>
+            <span class="gallery-badge">Volunteers</span>
           </div>
           <figcaption>Local volunteers coordinate outreach events and donation drives year‑round.</figcaption>
+        </figure>
+
+        <figure class="gallery-card reveal">
+          <div class="gallery-media" tabindex="0" role="button" aria-label="View enlarged photo: Community donation drive">
+            <img
+              src="images/donation-drive.jpg"
+              alt="Volunteers hand bags of food and household supplies to community members during a neighborhood donation drive."
+              loading="lazy" width="1400" height="933">
+            <span class="gallery-badge">Donation Drive</span>
+          </div>
+          <figcaption>Neighbors and volunteers come together to stock and distribute donation baskets.</figcaption>
+        </figure>
+
+        <figure class="gallery-card reveal">
+          <div class="gallery-media" tabindex="0" role="button" aria-label="View enlarged photo: Child nutrition and care program">
+            <img
+              src="images/child-care.jpg"
+              alt="A caregiver feeds a young child a warm meal, and the child laughs joyfully."
+              loading="lazy" width="1400" height="1063">
+            <span class="gallery-badge">Child Care</span>
+          </div>
+          <figcaption>Warm meals and steady care are at the heart of our child nutrition program.</figcaption>
+        </figure>
+
+        <figure class="gallery-card reveal">
+          <div class="gallery-media" tabindex="0" role="button" aria-label="View enlarged photo: Community relief box distribution">
+            <img
+              src="images/food-distribution.jpg"
+              alt="A line of community members carry boxes of relief supplies on their heads through a neighborhood."
+              loading="lazy" width="801" height="1200">
+            <span class="gallery-badge">Food Distribution</span>
+          </div>
+          <figcaption>Relief boxes reach families block by block, carried in by the community itself.</figcaption>
         </figure>
 
       </div>
@@ -362,6 +395,19 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged gallery photo" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close enlarged photo">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <figure class="lightbox-content">
+    <img src="" alt="" id="lightbox-image">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
 
 <script src="script.js"></script>
 </body>

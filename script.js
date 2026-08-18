@@ -136,4 +136,71 @@
       });
     }
   }
+
+  /* ---------- Gallery lightbox ---------- */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImage = document.getElementById('lightbox-image');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var lightboxClose = document.getElementById('lightbox-close');
+  var galleryTriggers = document.querySelectorAll('.gallery-media');
+  var lastFocusedEl = null;
+
+  function openLightbox(trigger) {
+    var img = trigger.querySelector('img');
+    var card = trigger.closest('.gallery-card');
+    var caption = card ? card.querySelector('figcaption') : null;
+
+    if (!img) return;
+
+    lastFocusedEl = trigger;
+    lightboxImage.src = img.currentSrc || img.src;
+    lightboxImage.alt = img.alt || '';
+    lightboxCaption.textContent = caption ? caption.textContent : '';
+
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImage.src = '';
+
+    if (lastFocusedEl) {
+      lastFocusedEl.focus();
+    }
+  }
+
+  if (lightbox && galleryTriggers.length) {
+    galleryTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        openLightbox(trigger);
+      });
+      // Keyboard support: Enter / Space activates the focused gallery item
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(trigger);
+        }
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Click on the dark backdrop (but not the image/figure itself) closes it
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        closeLightbox();
+      }
+    });
+  }
 })();
