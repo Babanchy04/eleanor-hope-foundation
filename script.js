@@ -12,14 +12,14 @@
 
   function openNav() {
     nav.classList.add('open');
-    backdrop.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
 
   function closeNav() {
     nav.classList.remove('open');
-    backdrop.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
@@ -33,9 +33,9 @@
     }
   }
 
-  if (hamburger && nav && backdrop) {
+  if (hamburger && nav) {
     hamburger.addEventListener('click', toggleNav);
-    backdrop.addEventListener('click', closeNav);
+    if (backdrop) backdrop.addEventListener('click', closeNav);
 
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeNav);
@@ -48,7 +48,7 @@
       }
     });
 
-    // Close the mobile menu automatically if the viewport grows past the breakpoint
+    // Close mobile menu automatically if viewport grows past breakpoint
     window.addEventListener('resize', function () {
       if (window.innerWidth > 860 && nav.classList.contains('open')) {
         closeNav();
@@ -114,7 +114,6 @@
 
   if (revealEls.length) {
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-      // No motion preference (or no observer support): show everything immediately.
       revealEls.forEach(function (el) {
         el.classList.add('in-view');
       });
@@ -179,7 +178,6 @@
       trigger.addEventListener('click', function () {
         openLightbox(trigger);
       });
-      // Keyboard support: Enter / Space activates the focused gallery item
       trigger.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -188,9 +186,8 @@
       });
     });
 
-    lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
 
-    // Click on the dark backdrop (but not the image/figure itself) closes it
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) {
         closeLightbox();
