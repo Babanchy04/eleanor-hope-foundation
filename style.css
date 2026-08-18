@@ -980,3 +980,33 @@ h3 {
   color: #ffffff;
   margin-top: auto;
 }
+
+/* ============================================
+   Sticky Header & Universal Footer Layout
+   ============================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Ensure body uses flex layout so footers sit at bottom on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
